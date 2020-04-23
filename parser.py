@@ -51,9 +51,9 @@ The file follows the following format:
          quit: end parsing
 See the file script for an example of the file format
 """
-ARG_COMMANDS = [ 'box', 'sphere', 'torus', 'circle', 'bezier', 'hermite', 'line', 'scale', 'move', 'rotate', 'save' ]
+ARG_COMMANDS = [ 'box', 'sphere', 'torus', 'circle', 'bezier', 'hermite', 'line', 'scale', 'move', 'rotate', 'save', 'color' ]
 
-def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color,view, ambient, light, areflect, dreflect, sreflect):
+def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color, view, ambient, light, areflect, dreflect, sreflect):
 
     f = open(fname)
     lines = f.readlines()
@@ -61,7 +61,7 @@ def parse_file( fname, edges, polygons, csystems, screen, zbuffer, color,view, a
     clear_screen(screen)
     clear_zbuffer(zbuffer)
     step = 100
-    step_3d = 20
+    step_3d = 50
 
     c = 0
     while c < len(lines):
